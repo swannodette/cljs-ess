@@ -1,4 +1,5 @@
-^{:css-dirs ["resources/public/css"]}
+^{:watch-dirs ["src"]
+  :css-dirs ["resources/public/css"]}
 
 {:main cljs-ess.core
  :output-to "resources/public/js/main.js"

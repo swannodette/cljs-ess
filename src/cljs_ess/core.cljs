@@ -1,4 +1,6 @@
 (ns cljs-ess.core
-  (:require [reagent.core :as r]))
+  (:require [goog.dom :as gdom]
+            [reagent.core :as r]))
 
-(println "Hello world!")
+(r/render [:p "Hello world!"] (gdom/getElement "app"))
+
