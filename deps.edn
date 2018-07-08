@@ -1,8 +1,11 @@
-{:paths ["src" "resources" "dev"]
- :deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
+{:paths ["src/clj" "src/cljs" "resources" "dev"]
+ :deps {io.pedestal/pedestal.service {:mvn/version "0.5.4"}
+        io.pedestal/pedestal.jetty {:mvn/version "0.5.4"}
+        com.stuartsierra/component {:mvn/version "0.3.2"}
+        org.clojure/clojurescript {:mvn/version "1.10.339"}
         reagent/reagent {:mvn/version "0.8.1"}}
  :aliases 
- {:fig {:extra-deps {com.bhauman/figwheel-main {:mvn/version "0.1.4"}
+ {:fig {:extra-deps {tubular {:mvn/version "1.2.0"}
+                     com.bhauman/figwheel-main {:mvn/version "0.1.4"}
                      com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
         :main-opts ["-m" "figwheel.main"]}}}
-                      
