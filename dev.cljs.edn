@@ -1,0 +1,5 @@
+^{:css-dirs ["resources/public/css"]}
+
+{:main cljs-ess.core
+ :output-to "resources/public/js/main.js"
+ :output-dir "resources/public/js/out"}
