@@ -23,7 +23,7 @@
     (dissoc component :server)))
 
 (defn figwheel-repl []
-  (repl/repl* (fig-repl/repl-env* {}) build))
+  (repl/repl* (fig-repl/repl-env* {:open-url "http://localhost:8080/index.html"}) build))
 
 (defrecord FigRepl [host port]
   component/Lifecycle
