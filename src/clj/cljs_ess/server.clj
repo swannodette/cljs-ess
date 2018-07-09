@@ -9,11 +9,8 @@
   (route/expand-routes                                   
     #{["/" :get respond-hello :route-name :greet]}))
 
-(defn create-server []
+(defn create-server [host port]
   (http/create-server     
     {::http/routes routes  
      ::http/type   :jetty  
      ::http/port   8890}))
-      
-(defn start []
-  (http/start (create-server)))
