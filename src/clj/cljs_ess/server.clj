@@ -11,7 +11,7 @@
 
 (defn create-server [host port]
   (let [service-map 
-        {::http/resource-path "resources/public"
+        {::http/resource-path "public"
          ::http/routes        routes  
          ::http/type          :jetty  
          ::http/port          port
