@@ -14,7 +14,7 @@
 (defrecord Server [host port]
   component/Lifecycle
   (start [component]
-    (println "Start webserver")
+    (println "Start webserver" host port)
     (let [server (server/create-server host port)]
       (http/start server)
       (assoc component :server server)))
