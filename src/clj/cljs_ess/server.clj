@@ -10,8 +10,13 @@
     #{["/" :get respond-hello :route-name :greet]}))
 
 (defn create-server [host port]
-  (http/create-server     
-    {::http/routes routes  
-     ::http/type   :jetty  
-     ::http/port   port
-     ::http/join   false}))
+  (let [service-map 
+        {::http/resource-path "resources/public"
+         ::http/routes        routes  
+         ::http/type          :jetty  
+         ::http/port          port
+         ::http/join          false}] 
+    (-> service-map 
+       http/default-interceptors 
+       http/create-server)))     
+    
