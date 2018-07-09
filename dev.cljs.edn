@@ -3,4 +3,5 @@
 {:main cljs-ess.core
  :preloads [figwheel.repl.preload figwheel.core figwheel.main]
  :output-to "resources/public/js/main.js"
- :output-dir "resources/public/js/out"}
+ :output-dir "resources/public/js/out"
+ :closure-defines {figwheel.repl/connect-url "ws://localhost:9500/figwheel-connect"}}
