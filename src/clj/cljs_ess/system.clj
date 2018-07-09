@@ -27,7 +27,7 @@
 (defrecord FigRepl [host port]
   component/Lifecycle
   (start [component]
-    (println "FigRepl" host port)
+    (println "Figwheel REPL" host port)
     (clj-server/start-server
       {:name :figwheel-repl
        :host host
@@ -36,12 +36,26 @@
   (stop [component]
     (clj-server/stop-server :figwheel-repl)))
 
+(defrecord ClojureRepl [host port]
+  component/Lifecycle
+  (start [component]
+    (println "Clojure REPL" host port)
+    (clj-server/start-server
+       {:name :clj-repl
+        :host host
+        :port port
+        :accept `clojure.main/repl}))
+  (stop [component]
+    (clj-server/stop-server :clj-repl)))
+
 (defrecord FigBuild [])
 
 (defn new-system []
   (component/system-map
-    :repl   (map->FigRepl {:host "localhost" :port 5555})
-    :server (map->Server {:host "localhost" :port 8080})))
+    :clj-repl (map->ClojureRepl {:host "localhost" :port 5554})
+    :fig-repl (map->FigRepl {:host "localhost" :port 5555})
+    :server   (map->Server {:host "localhost" :port 8080})))
     
 (defn -main [& args]
   (component/start (new-system)))
+    
