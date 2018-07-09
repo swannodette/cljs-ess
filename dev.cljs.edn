@@ -1,4 +1,4 @@
-^{:watch-dirs ["src"]
+^{:watch-dirs ["src/cljs"]
   :css-dirs ["resources/public/css"]}
 {:main cljs-ess.core
  :preloads [figwheel.repl.preload figwheel.core figwheel.main]
