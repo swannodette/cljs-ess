@@ -2,12 +2,14 @@
   (:require [clojure.edn :as edn]
             [clojure.java.io :as io]
             [figwheel.repl :as fig-repl]
-            [figwheel.core :as fig-core]
+            [figwheel.main :as fig-main]
             [cljs.repl :as repl]
             [clojure.core.server :as clj-server]
             [io.pedestal.http :as http]
             [cljs-ess.server :as server]
             [com.stuartsierra.component :as component]))
+
+(def build (-> "dev.cljs.edn" io/file slurp edn/read-string))
 
 (defrecord Server [host port]
   component/Lifecycle
@@ -21,8 +23,7 @@
     (dissoc component :server)))
 
 (defn figwheel-repl []
-  (let [build (-> "dev.cljs.edn" io/file slurp edn/read-string)]
-    (repl/repl* (fig-repl/repl-env* {}) build)))
+  (repl/repl* (fig-repl/repl-env* {}) build))
 
 (defrecord FigRepl [host port]
   component/Lifecycle
@@ -48,13 +49,20 @@
   (stop [component]
     (clj-server/stop-server :clj-repl)))
 
-(defrecord FigBuild [])
+(defrecord FigBuild [builds]
+  component/Lifecycle
+  (start [component]
+    (fig-main/start-builds* builds)
+    (assoc component :figwheel true))
+  (stop [component]
+    (dissoc component :figwheel true)))
 
 (defn new-system []
   (component/system-map
-    :clj-repl (map->ClojureRepl {:host "localhost" :port 5554})
-    :fig-repl (map->FigRepl {:host "localhost" :port 5555})
-    :server   (map->Server {:host "localhost" :port 8080})))
+    :clj-repl  (map->ClojureRepl {:host "localhost" :port 5554})
+    :fig-repl  (map->FigRepl {:host "localhost" :port 5555})
+    :fig-build (map->FigBuild {:builds ["dev"]})
+    :server    (map->Server {:host "localhost" :port 8080})))
     
 (defn -main [& args]
   (component/start (new-system)))
