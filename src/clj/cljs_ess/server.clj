@@ -13,4 +13,5 @@
   (http/create-server     
     {::http/routes routes  
      ::http/type   :jetty  
-     ::http/port   8890}))
+     ::http/port   8890
+     ::http/join   false}))

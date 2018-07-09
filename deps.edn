@@ -1,11 +1,19 @@
-{:paths ["src/clj" "src/cljs" "resources" "dev"]
- :deps {io.pedestal/pedestal.service {:mvn/version "0.5.4"}
+{:paths ["src" "src/clj" "resources"]
+
+ :deps {org.clojure/clojure {:mvn/version "1.9.0"}
+        io.pedestal/pedestal.service {:mvn/version "0.5.4"}
         io.pedestal/pedestal.jetty {:mvn/version "0.5.4"}
-        com.stuartsierra/component {:mvn/version "0.3.2"}
-        org.clojure/clojurescript {:mvn/version "1.10.339"}
-        reagent/reagent {:mvn/version "0.8.1"}}
+        com.stuartsierra/component {:mvn/version "0.3.2"}}
+
  :aliases 
- {:fig {:extra-deps {tubular {:mvn/version "1.2.0"}
+ {:dev {:extra-paths ["src/cljs" "dev"]
+        :extra-deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
+                     reagent/reagent {:mvn/version "0.8.1"}
                      com.bhauman/figwheel-main {:mvn/version "0.1.4"}
                      com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
-        :main-opts ["-m" "figwheel.main"]}}}
+        :main-opts ["-m" "figwheel.main"]}
+
+  :repl {:extra-deps {tubular {:git/url "https://github.com/swannodette/tubular" 
+                               :sha "b1949e6e731e1817cd80346bf78da59139951b77"}}}
+
+  :run {:main-opts ["-m" "cljs-ess.system"]}}}
