@@ -1,8 +1,5 @@
 {:paths ["src" "resources" "dev"]
  :deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
-        reagent/reagent {:mvn/version "0.8.1"}}
- :aliases 
- {:fig {:extra-deps {com.bhauman/figwheel-main {:mvn/version "0.1.4"}
-                     com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
-        :main-opts ["-m" "figwheel.main"]}}}
-                      
+        reagent/reagent {:mvn/version "0.8.1"}
+        com.bhauman/figwheel-main {:mvn/version "0.1.4"}
+        com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}}
