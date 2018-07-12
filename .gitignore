@@ -4,3 +4,4 @@ resources/public/js/out
 .rebel*
 .lein*
 target
+main.js.gz
