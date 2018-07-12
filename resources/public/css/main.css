@@ -1,3 +1,17 @@
 #app {
     font-size: 24px;
 }
+
+.section {
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 1em;
+}
+
+input[type='checkbox'] {
+    margin-left: 1em;
+}
