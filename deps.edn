@@ -5,6 +5,8 @@
         com.bhauman/figwheel-main {:mvn/version "0.1.4"}
         com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
  :aliases {:tut1 {:extra-paths ["tut1"]}
+  
+           ;; can remove the boilerplate w/ :main-opts
            :tut2 {:extra-paths ["tut2"]
-                  :main-opts ["-m" "figwheel.main"]}}}
+                  :main-opts ["-m" "figwheel.main" "-b" "builds/tut2" "-r"]}}}
  
