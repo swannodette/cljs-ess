@@ -8,5 +8,3 @@
            :tut2 {:extra-paths ["tut2"]
                   :main-opts ["-m" "figwheel.main"]}}}
  
- 
- 
