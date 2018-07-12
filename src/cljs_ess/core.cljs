@@ -4,11 +4,11 @@
 
 (def state (r/atom 0))
 
-(defn counter [text]
+(defn counter [clicks]
   [:div
-    [:p (str "Hello Reagent! I've counted " @state " clicks so far")]
+    [:p (str "Hello Reagent! I've counted " @clicks " clicks so far")]
     [:button 
-      {:on-click (fn [e] (swap! state inc))} 
+      {:on-click (fn [e] (swap! clicks inc))} 
       "Click Me!"]])
 
 (r/render [counter state] (gdom/getElement "app"))
