@@ -8,5 +8,9 @@
   
            ;; can remove the boilerplate w/ :main-opts
            :tut2 {:extra-paths ["src/tut2"]
-                  :main-opts ["-m" "figwheel.main" "-b" "builds/tut2" "-r"]}}}
+                  :main-opts ["-m" "figwheel.main" "-b" "builds/tut2" "-r"]}
+                  
+           :tut3 {:extra-paths ["src/tut3"]}}}
+                  
+        
  

@@ -1,0 +1,5 @@
+^{:watch-dirs ["src"]
+  :css-dirs ["resources/public/css"]}
+{:main test-fun.core
+ :output-to "resources/public/js/main.js"
+ :output-dir "resources/public/js/out"}
