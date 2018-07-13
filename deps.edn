@@ -16,6 +16,8 @@
            :tut4 {:override-deps {reagent/reagent {:mvn/version "0.8.1" :exclusions [cljsjs/react]}}
                   :extra-paths ["src/tut4"]}
 
+           :tut5 {:extra-paths ["src/tut5"]}
+
            :tut6 {:extra-deps {org.clojure/core.async {:mvn/version "0.4.474"}}
                   :extra-paths ["src/tut6"]}
 
