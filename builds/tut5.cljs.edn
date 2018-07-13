@@ -4,7 +4,7 @@
  :output-to "resources/public/js/main.js"
  :output-dir "resources/public/js/out"
  :optimizations :none
- :modules {:page-a {:entries '#{code-split.page-a}
+ :modules {:page-a {:entries #{code-split.page-a}
                     :output-to "resources/public/js/page_a.js"}
-           :page-b {:entries '#{code-split.page-b}
+           :page-b {:entries #{code-split.page-b}
                     :output-to "resources/public/js/page_b.js"}}}
