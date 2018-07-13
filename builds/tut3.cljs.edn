@@ -1,4 +1,4 @@
-^{:watch-dirs ["src"]
+^{:watch-dirs ["src/tut3"]
   :css-dirs ["resources/public/css"]}
 {:main test-fun.core
  :output-to "resources/public/js/main.js"

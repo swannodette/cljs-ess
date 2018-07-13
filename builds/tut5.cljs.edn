@@ -1,4 +1,4 @@
-^{:watch-dirs ["src"]
+^{:watch-dirs ["src/tut5"]
   :css-dirs ["resources/public/css"]}
 {:main code-split.core
  :output-to "resources/public/js/main.js"
