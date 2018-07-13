@@ -1,14 +1,20 @@
 {:paths ["src" "resources" "dev"]
  :deps {org.clojure/clojure {:mvn/version "1.9.0"}
         org.clojure/clojurescript {:mvn/version "1.10.339"}
-        reagent/reagent {:mvn/version "0.8.1"}
         com.bhauman/figwheel-main {:mvn/version "0.1.4"}
         com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
- :aliases {:tut1 {:extra-paths ["src/tut1"]}
+ :aliases {:tut1 {:extra-deps {reagent/reagent {:mvn/version "0.8.1"}} 
+                  :extra-paths ["src/tut1"]}
   
-           ;; can remove the boilerplate w/ :main-opts
-           :tut2 {:extra-paths ["src/tut2"]
+           ;; can remove the CLI boilerplate w/ :main-opts
+           :tut2 {:extra-deps {reagent/reagent {:mvn/version "0.8.1"}}
+                  :extra-paths ["src/tut2"]
                   :main-opts ["-m" "figwheel.main" "-b" "builds/tut2" "-r"]}
                   
-           :tut3 {:extra-paths ["src/tut3"]}}}
+           :tut3 {:extra-deps {reagent/reagent {:mvn/version "0.8.1"}}
+                  :extra-paths ["src/tut3"]}
+                  
+           :tut4 {:extra-deps {reagent/reagent {:mvn/version "0.8.1" 
+                                                :exclusions [cljsjs/react]}}
+                  :extra-paths ["src/tut4"]}}}
 
