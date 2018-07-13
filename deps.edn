@@ -17,9 +17,9 @@
            :tut4 {:extra-deps {reagent/reagent {:mvn/version "0.8.1" :exclusions [cljsjs/react]}}                                                
                   :extra-paths ["src/tut4"]}
                   
-           :tut6 {:extra-deps [org.clojure/core.async "0.4.474"]
+           :tut6 {:extra-deps [org.clojure/core.async {:mvn/version "0.4.474"}]
                   :extra-paths ["src/tut6"]}
                   
-           :tut7 {:extra-deps [org.clojure/test.check "0.10.0-alpha3"]
+           :tut7 {:extra-deps [org.clojure/test.check {:mvn/version "0.10.0-alpha3"}]
                   :extra-paths ["src/tut7"]}}}
 
