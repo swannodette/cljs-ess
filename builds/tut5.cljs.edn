@@ -1,0 +1,10 @@
+^{:watch-dirs ["src"]
+  :css-dirs ["resources/public/css"]}
+{:main code-split.core
+ :output-to "resources/public/js/main.js"
+ :output-dir "resources/public/js/out"
+ :optimizations :none
+ :modules {:foo {:entries '#{code-split.page-a}
+                 :output-to "resources/public/js/page_a.js"}
+           :bar {:entries '#{code-split.page-b}
+                 :output-to "resources/public/js/page_b.js"}}}
