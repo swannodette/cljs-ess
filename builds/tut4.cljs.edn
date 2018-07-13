@@ -1,11 +1,14 @@
 ^{:watch-dirs ["src"]
   :css-dirs ["resources/public/css"]}
-{:main test-fun.core
+{:main webpack-fun.core
  :output-to "resources/public/js/main.js"
  :output-dir "resources/public/js/out"
  :infer-externs true
  :npm-deps false
  :foreign-libs [{:file "dist/index_bundle.js"
-                 :provides ["react-datepicker"]
-                 :global-exports {react-datepicker ReactDatePicker}}]}
+                 :provides ["moment" "react" "react-dom" "react-datepicker"]
+                 :global-exports {moment moment 
+                                  react React                            
+                                  react-dom ReactDOM
+                                  react-datepicker ReactDatePicker}}]}
                  

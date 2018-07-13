@@ -14,7 +14,6 @@
            :tut3 {:extra-deps {reagent/reagent {:mvn/version "0.8.1"}}
                   :extra-paths ["src/tut3"]}
                   
-           :tut4 {:extra-deps {reagent/reagent {:mvn/version "0.8.1" 
-                                                :exclusions [cljsjs/react]}}
+           :tut4 {:extra-deps {reagent/reagent {:mvn/version "0.8.1" :exclusions [cljsjs/react]}}                                                
                   :extra-paths ["src/tut4"]}}}
 
