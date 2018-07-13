@@ -7,3 +7,6 @@
 (deftest test-conj
   (is (= (conj [1 2] 3)
          [1 2 3])))
+
+(defn -main [& args]
+  (run-tests))

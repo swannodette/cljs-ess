@@ -10,3 +10,4 @@ package.json
 dist
 target
 yarn*
+src/js/index.js
