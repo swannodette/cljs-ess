@@ -8,6 +8,12 @@
     border: 1px solid #ccc;
 }
 
+.subview {
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px dotted black;
+}
+
 button {
     margin-top: 1em;
 }

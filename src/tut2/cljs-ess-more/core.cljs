@@ -3,25 +3,27 @@
             [reagent.core :as r]))
             
 (def app-state 
-  (r/atom {:counter 0
-           :text ""}))
+  (r/atom {:counter 0}))
 
-(defn subview []
+(defn sub-subview []
   [:div.subview "I'm a subview"])
 
 (defn toggle-view [app-state]
   (let [toggle-state (r/atom false)]
     (fn [_]
       [:div
-        [:div
-          [:div (str "I've counded " @app-state " clicks!")]
+        [:div.section
+          [:div (str "I've counted " (:counter @app-state) " clicks!")]
           [:button 
-            {:on-click (fn [_] (swap! update app-state :counter inc))}
+            {:on-click (fn [_] (swap! app-state update :counter inc))}
             "Click Me!"]]
-        [:div
-          [:label "Toggle Me!"]
-          [:checkbox 
-            {:checked (:enabled @app-state)
-             :on-click (fn [_] (swap! toggle-state complement))}]]])))
+        [:div.section
+          [:label "Toggle Me!"
+            [:input
+              {:type "checkbox"
+               :checked @toggle-state
+               :on-change (fn [_] (swap! toggle-state not))}]]
+          (when @toggle-state
+            [sub-subview])]])))
 
 (r/render [toggle-view app-state] (gdom/getElement "app"))
