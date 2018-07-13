@@ -5,3 +5,8 @@ resources/public/js/out
 .lein*
 target
 main.js.gz
+node_modules
+package.json
+dist
+target
+yarn*
