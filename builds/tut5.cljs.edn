@@ -1,8 +1,7 @@
 ^{:watch-dirs ["src/tut5"]
-  :css-dirs ["resources/public/css"]}
-{:main code-split.core
- :output-to "resources/public/js/main.js"
- :output-dir "resources/public/js/out"
+  :css-dirs ["resources/public/css"]
+  :open-url "http://localhost:9500/split.html"}
+{:output-dir "resources/public/js/out"
  :optimizations :none
  :modules {:page-a {:entries #{code-split.page-a}
                     :output-to "resources/public/js/page_a.js"}
